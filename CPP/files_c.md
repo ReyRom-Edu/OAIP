@@ -106,7 +106,7 @@ if (file != NULL) {
 ```c
 FILE *file = fopen("data.txt", "w");
 if (file != NULL) {
-    fprintf(file, "Name: %s, Age: %d\n", "Alice", 25);
+    fprintf(file, "Name: %s Age: %d\n", "Alice", 25);
     fclose(file);
 }
 ```
@@ -117,7 +117,7 @@ FILE *file = fopen("data.txt", "r");
 if (file != NULL) {
     char name[50];
     int age;
-    fscanf(file, "Name: %s, Age: %d", name, &age);
+    fscanf(file, "Name: %s Age: %d", name, &age);
     printf("Name: %s, Age: %d\n", name, age);
     fclose(file);
 }
