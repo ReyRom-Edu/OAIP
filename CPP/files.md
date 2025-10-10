@@ -185,6 +185,41 @@ int main() {
 > 💡 **Пояснение:**
 > `reinterpret_cast<char*>` используется для преобразования адреса массива к указателю на байты (`char*`), так как `write()` и `read()` работают именно с последовательностями байтов.
 
+### Пример: запись и чтение структуры
+```cpp
+struct Point { 
+	int x; 
+	int y;
+};
+
+ofstream outFile("example.dat", ios::binary);
+if (outFile.is_open())
+{
+	Point p = { 1,2 };
+	outFile.write(reinterpret_cast<char*>(&p), sizeof(p));
+	outFile.close();
+}
+else
+{
+	printf("Ошибка открытия файла");
+}
+
+ifstream inFile("example.dat", ios::binary);
+string line;
+if (inFile.is_open())
+{
+	Point value;
+	inFile.read(reinterpret_cast<char*>(&value), sizeof(value));
+	cout << value.x << " " << value.y;
+
+	inFile.close();
+}
+else
+{
+	printf("Ошибка чтения файла");
+}
+```
+
 ## Полезные приёмы
 
 * Проверка успешности открытия файла:
