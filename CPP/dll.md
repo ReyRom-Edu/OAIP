@@ -52,6 +52,7 @@ extern "C" MYLIBRARY_API int multiply(int a, int b);
 
 ```cpp
 // MyFunctions.cpp
+#include "pch.h"
 #include "MyFunctions.h"
 
 int add(int a, int b) {
