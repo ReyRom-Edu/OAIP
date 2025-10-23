@@ -48,6 +48,13 @@
 
 extern "C" MYLIBRARY_API int add(int a, int b);
 extern "C" MYLIBRARY_API int multiply(int a, int b);
+
+struct MYLIBRARY_API myStruct{
+   int x;
+
+   void print();
+}
+
 ```
 
 ```cpp
@@ -61,6 +68,10 @@ int add(int a, int b) {
 
 int multiply(int a, int b) {
     return a * b;
+}
+
+void myStruct::print(){
+   // Код вывода на экран
 }
 ```
 
